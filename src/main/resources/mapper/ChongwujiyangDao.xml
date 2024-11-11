@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChongwujiyangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChongwujiyangEntity" id="chongwujiyangMap">
+        <result property="jiyangdanhao" column="jiyangdanhao"/>
+        <result property="mendianmingcheng" column="mendianmingcheng"/>
+        <result property="mendiandizhi" column="mendiandizhi"/>
+        <result property="mendianfengmian" column="mendianfengmian"/>
+        <result property="jiyangjiage" column="jiyangjiage"/>
+        <result property="shifoujiyang" column="shifoujiyang"/>
+        <result property="chongwumingcheng" column="chongwumingcheng"/>
+        <result property="chongwufenlei" column="chongwufenlei"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="shifoujueyu" column="shifoujueyu"/>
+        <result property="nianling" column="nianling"/>
+        <result property="jiyangriqi" column="jiyangriqi"/>
+        <result property="jiyangyuanyin" column="jiyangyuanyin"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="ispay" column="ispay"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChongwujiyangVO" >
+		SELECT * FROM chongwujiyang  chongwujiyang         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChongwujiyangVO" >
+		SELECT  chongwujiyang.* FROM chongwujiyang  chongwujiyang 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChongwujiyangView" >
+
+		SELECT  chongwujiyang.* FROM chongwujiyang  chongwujiyang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChongwujiyangView" >
+		SELECT * FROM chongwujiyang  chongwujiyang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
